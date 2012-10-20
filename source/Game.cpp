@@ -17,9 +17,13 @@
 #include "Cell.h"
 #include "Material.h"
 #include "PathTool.h"
+#include "App.h"
 
 void game(void)
 {
+	NEW App();
+	GetApp();
+
 	LuaLoader<int> loader;
 
 	std::string filename;

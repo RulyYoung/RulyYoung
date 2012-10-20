@@ -19,6 +19,7 @@ App::App(void)
 }
 App::~App(void)
 {
+	DELETE( m_engine_ptr );
 	g_app = NULL;
 }
 Engine* App::GetEngine(void)
