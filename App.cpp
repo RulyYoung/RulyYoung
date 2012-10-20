@@ -7,8 +7,10 @@
 //
 
 #include "App.h"
+#include "Base.h"
 
 App::App(void)
+	:	m_engine_ptr( NULL )
 {
 }
 App::~App(void)
