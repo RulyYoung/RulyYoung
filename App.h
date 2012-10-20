@@ -9,6 +9,14 @@
 #ifndef __D10__App__
 #define __D10__App__
 
-#include <iostream>
-
+class Engine;
+class App
+{
+public:
+	App(void);
+	~App(void);
+	Engine* GetEngine(void);
+private:
+	Engine* m_engine_ptr;
+};
 #endif /* defined(__D10__App__) */

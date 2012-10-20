@@ -43,6 +43,7 @@ class App;
 App* CreateApp(void);
 App* GetApp(void);
 void FreeApp(void);
+Engine* GetEngine(void);
 
 #endif	//	__ENGINE_H__
 

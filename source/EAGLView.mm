@@ -76,7 +76,7 @@
 	//NSArray *firstTouchArr = [touches allObjects];
 	
 	TouchInstance instance( touches, self );
-	eg().GetTouch()->OnTouchBegin( &instance );
+	GetEngine()->GetTouch()->OnTouchBegin( &instance );
 	
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -88,7 +88,7 @@
 	
 	//}
 	TouchInstance instance( touches, self );
-	eg().GetTouch()->OnTouchEnd( &instance );
+	GetEngine()->GetTouch()->OnTouchEnd( &instance );
 	
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -100,12 +100,12 @@
 	
 	//}
 	TouchInstance instance( touches, self );
-	eg().GetTouch()->OnTouchMove( &instance );
+	GetEngine()->GetTouch()->OnTouchMove( &instance );
 
 }
 
 - (void)drawView {
-	eg().OnFrameMove();
+	GetEngine()->OnFrameMove();
     // Replace the implementation of this method to do your own custom drawing
     
     [EAGLContext setCurrentContext:context];
@@ -145,7 +145,7 @@
     //glRotatef(3.0f, 0.0f, 0.0f, 1.0f);
 	//	glScalef( 
     
-	const Color& c = eg().GetRender()->setting.cBGC;
+	const Color& c = GetEngine()->GetRender()->setting.cBGC;
     glClearColor
 	(
 		c.GetRed(),
@@ -161,7 +161,7 @@
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	
 	glEnable(GL_BLEND);
-	eg().OnDraw();
+	GetEngine()->OnDraw();
 	glDisable(GL_BLEND);
 	
 	//glRectf(-25.0f, 25.0f, 25.0f, -25.0f); 

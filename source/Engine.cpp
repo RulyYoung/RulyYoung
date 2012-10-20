@@ -64,7 +64,7 @@ Engine& eg(void)
 }
 Cell* GetRoot(void)
 {
-	return eg().GetUI()->GetRoot();
+	return GetEngine()->GetUI()->GetRoot();
 }
 UI* Engine::GetUI(void)	const
 {
@@ -74,3 +74,19 @@ TouchUI* Engine::GetTouch(void)	const
 {
 	return m_touch_ptr;
 }
+Engine* GetEngine(void)
+{
+	return &eg();
+}
+
+
+
+
+
+
+
+
+
+
+
+

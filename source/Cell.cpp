@@ -102,7 +102,7 @@ Cell::~Cell(void)
 }
 Vec2 Cell::GetCursorPos(void)	const
 {
-	const Vec2 pos( eg().GetUI()->GetMousePos() );
+	const Vec2 pos( GetEngine()->GetUI()->GetMousePos() );
 	Vec2 v( pos.x, pos.y );
 	GetLocalPos( v );
 	return v;

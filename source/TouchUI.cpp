@@ -33,7 +33,7 @@ void TouchUI::OnTouchBegin(ITouch* it)
 		float x, y;
 		if( it->GetPos( x, y, i ) )
 		{
-			is_ui = is_ui || eg().GetUI()->ProcTouchDown( x, y );
+			is_ui = is_ui || GetEngine()->GetUI()->ProcTouchDown( x, y );
 		}
 	}
 	
@@ -58,7 +58,8 @@ void TouchUI::OnTouchEnd(ITouch* it)
 		float x, y;
 		if( it->GetPos( x, y, i ) )
 		{
-			is_ui = is_ui || eg().GetUI()->ProcTouchUP( x, y );
+			is_ui = is_ui
+				|| GetEngine()->GetUI()->ProcTouchUP( x, y );
 		}
 	}
 	

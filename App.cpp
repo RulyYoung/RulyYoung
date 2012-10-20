@@ -7,3 +7,17 @@
 //
 
 #include "App.h"
+
+App::App(void)
+{
+}
+App::~App(void)
+{}
+Engine* App::GetEngine(void)
+{
+	return m_engine_ptr;
+}
+
+
+
+
