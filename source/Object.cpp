@@ -6,9 +6,25 @@
 //
 //
 
-#ifndef D10_Object_cpp
-#define D10_Object_cpp
+#include "Object.h"
+#include "Base.h"
 
-
-
-#endif
+Object::Object(void)
+	:	m_ref_counter( 1 )
+{}
+Object::~Object(void)
+{}
+unsigned int Object::AddRef(void)
+{
+	return ++m_ref_counter;
+}
+unsigned int Object::Release(void)
+{
+	--m_ref_counter;
+	unsigned int last_ref_counter = m_ref_counter;
+	if( 0 >= m_ref_counter )
+	{
+		DELETE( this );
+	}
+	return last_ref_counter;
+}

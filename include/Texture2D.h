@@ -1,0 +1,75 @@
+
+#import <UIKit/UIKit.h>
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/EAGLDrawable.h>
+#import <OpenGLES/ES1/gl.h>
+#import <OpenGLES/ES1/glext.h>
+
+//CONSTANTS:
+
+typedef enum {
+	kTexture2DPixelFormat_Automatic = 0,
+	kTexture2DPixelFormat_RGBA8888,
+	kTexture2DPixelFormat_RGBA4444,
+	kTexture2DPixelFormat_RGBA5551,
+	kTexture2DPixelFormat_RGB565,
+	kTexture2DPixelFormat_RGB888,
+	kTexture2DPixelFormat_L8,
+	kTexture2DPixelFormat_A8,
+	kTexture2DPixelFormat_LA88,
+	kTexture2DPixelFormat_RGB_PVRTC2,
+	kTexture2DPixelFormat_RGB_PVRTC4,
+	kTexture2DPixelFormat_RGBA_PVRTC2,
+	kTexture2DPixelFormat_RGBA_PVRTC4
+} Texture2DPixelFormat;
+
+
+@interface Texture2D : NSObject
+{
+@private
+	GLuint						_name;
+	CGSize						_size;
+	NSUInteger					_width,
+								_height;
+	Texture2DPixelFormat		_format;
+	GLfloat						_maxS,
+								_maxT;
+}
+- (id) initWithData:(const void*)data pixelFormat:(Texture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size;
+
+@property(readonly) Texture2DPixelFormat pixelFormat;
+@property(readonly) NSUInteger pixelsWide;
+@property(readonly) NSUInteger pixelsHigh;
+
+@property(readonly) GLuint name;
+
+@property(readonly, nonatomic) CGSize contentSize;
+@property(readonly) GLfloat maxS;
+@property(readonly) GLfloat maxT;
+@end
+
+/*
+Drawing extensions to make it easy to draw basic quads using a Texture2D object.
+These functions require GL_TEXTURE_2D and both GL_VERTEX_ARRAY and GL_TEXTURE_COORD_ARRAY client states to be enabled.
+*/
+@interface Texture2D (Drawing)
+- (void) preload; //Forces the texture to "preload" by drawing an invisible quad with it
+- (void) drawAtPoint:(CGPoint)point;
+- (void) drawAtPoint:(CGPoint)point depth:(CGFloat)depth;
+- (void) drawInRect:(CGRect)rect;
+- (void) drawInRect:(CGRect)rect depth:(CGFloat)depth;
+@end
+
+
+@interface Texture2D (Image)
+- (id) initWithImagePath:(NSString*)path; //If the path is not absolute, it is assumed to be relative to the main bundle's resources
+- (id) initWithImagePath:(NSString*)path sizeToFit:(BOOL)sizeToFit; //For non-power-of-two images, if "sizeToFit" is YES, the image is scaled to power-of-two dimensions, otherwise extra margins are added
+- (id) initWithImagePath:(NSString*)path sizeToFit:(BOOL)sizeToFit pixelFormat:(Texture2DPixelFormat)pixelFormat;
+
+- (id) initWithCGImage:(CGImageRef)image orientation:(UIImageOrientation)orientation sizeToFit:(BOOL)sizeToFit pixelFormat:(Texture2DPixelFormat)pixelFormat; //Primitive
+@end
+
+@interface Texture2D (Text)
+- (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size;
+- (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment font:(UIFont*)font;
+@end
