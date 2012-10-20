@@ -19,4 +19,5 @@ public:
 private:
 	Engine* m_engine_ptr;
 };
+App* GetApp(void);
 #endif /* defined(__D10__App__) */

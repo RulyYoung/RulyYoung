@@ -18,7 +18,6 @@
 #include "Material.h"
 #include "PathTool.h"
 
-
 void game(void)
 {
 	LuaLoader<int> loader;
@@ -35,7 +34,7 @@ void game(void)
 		fc->SetX( 320 / 2 );
 		fc->SetY( 480 / 2 );
 	}
-	////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 	Cell* obj = new Cell();
 	{
 		ViewController* fc = obj->GetViewController();
@@ -48,7 +47,7 @@ void game(void)
 		fc->SetImage( "pic01.jpg" );
 		GetRoot()->GetMemberController()->AddChild( obj );
 	}
-	////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 	LISTENER_BEGIN( obj, EVENT_FRAMEMOVE )
 		obj->GetViewController()->SetX
 			( obj->GetViewController()->GetX() + 1 );
