@@ -15,6 +15,7 @@
 #include "Touch.h"
 #include "TouchUI.h"
 #include "Render.h"
+#include "App.h"
 
 Engine::Engine(void)
 	:	m_clock( 0 )
@@ -57,11 +58,6 @@ double Engine::GetCurrentTime(void)	const
 {
 	return m_clock;
 }
-Engine& eg(void)
-{
-	static Engine g;
-	return g;
-}
 Cell* GetRoot(void)
 {
 	return GetEngine()->GetUI()->GetRoot();
@@ -76,7 +72,7 @@ TouchUI* Engine::GetTouch(void)	const
 }
 Engine* GetEngine(void)
 {
-	return &eg();
+	return GetApp()->GetEngine();
 }
 
 

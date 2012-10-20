@@ -14,6 +14,8 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		B338BF4B1619C55400E66C36 /* LuaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B338BF4A1619C55400E66C36 /* LuaObject.cpp */; };
 		B341D72D1632F7DB00C6998B /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B341D72B1632F7DB00C6998B /* App.cpp */; };
+		B341D733163365C000C6998B /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B341D731163365C000C6998B /* Scene.cpp */; };
+		B341D7361633666F00C6998B /* SceneMngr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B341D7341633666E00C6998B /* SceneMngr.cpp */; };
 		B356D565161DA8F700DF128C /* LuaLoaderBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B356D564161DA8F700DF128C /* LuaLoaderBase.cpp */; };
 		B36796AD15CC328F005347A3 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B367967815CC328F005347A3 /* lapi.c */; };
 		B36796AE15CC328F005347A3 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = B367967A15CC328F005347A3 /* lauxlib.c */; };
@@ -104,6 +106,10 @@
 		B338BF4A1619C55400E66C36 /* LuaObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaObject.cpp; path = source/LuaObject.cpp; sourceTree = "<group>"; };
 		B341D72B1632F7DB00C6998B /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		B341D72C1632F7DB00C6998B /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		B341D731163365C000C6998B /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		B341D732163365C000C6998B /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		B341D7341633666E00C6998B /* SceneMngr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneMngr.cpp; sourceTree = "<group>"; };
+		B341D7351633666E00C6998B /* SceneMngr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMngr.h; sourceTree = "<group>"; };
 		B356D563161DA89B00DF128C /* LuaLoaderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaLoaderBase.h; path = include/LuaLoaderBase.h; sourceTree = "<group>"; };
 		B356D564161DA8F700DF128C /* LuaLoaderBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaLoaderBase.cpp; path = source/LuaLoaderBase.cpp; sourceTree = "<group>"; };
 		B367967815CC328F005347A3 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lapi.c; path = lua/lapi.c; sourceTree = "<group>"; };
@@ -297,6 +303,10 @@
 				B3BA22B81628954B0025B34F /* Object.cpp */,
 				B341D72B1632F7DB00C6998B /* App.cpp */,
 				B341D72C1632F7DB00C6998B /* App.h */,
+				B341D731163365C000C6998B /* Scene.cpp */,
+				B341D732163365C000C6998B /* Scene.h */,
+				B341D7341633666E00C6998B /* SceneMngr.cpp */,
+				B341D7351633666E00C6998B /* SceneMngr.h */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -684,6 +694,8 @@
 				B389E0FE161DA66F001589DE /* LuaFileChunk.cpp in Sources */,
 				B356D565161DA8F700DF128C /* LuaLoaderBase.cpp in Sources */,
 				B341D72D1632F7DB00C6998B /* App.cpp in Sources */,
+				B341D733163365C000C6998B /* Scene.cpp in Sources */,
+				B341D7361633666F00C6998B /* SceneMngr.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

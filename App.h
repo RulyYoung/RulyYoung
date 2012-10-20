@@ -10,13 +10,16 @@
 #define __D10__App__
 
 class Engine;
+class SceneMngr;
 class App
 {
 public:
 	App(void);
 	~App(void);
 	Engine* GetEngine(void);
+	SceneMngr* GetSceneMngr(void)	const;
 private:
+	SceneMngr* m_scene_mngr_ptr;
 	Engine* m_engine_ptr;
 };
 App* GetApp(void);

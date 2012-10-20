@@ -34,7 +34,6 @@ private:
 	double m_clock;
 };
 
-Engine& eg(void);
 Cell* GetRoot(void);
 
 void game(void);
