@@ -7,13 +7,13 @@
 //
 
 #include <iostream>
-#include "LogTool.h"
-#include "PathTool.h"
+#include "Log.h"
+#include "Path.h"
 #include "TimeTool.h"
 
 void LogGetLogNormalFilename(std::string& out_filename)
 {
-	out_filename = Path::GetDoc( LOG_FILENAME_NORMAL );
+	out_filename = Path( LOG_FILENAME_NORMAL ).GetDocFilename();
 }
 void LogGetLogTimeMark(std::string& out_str)
 {

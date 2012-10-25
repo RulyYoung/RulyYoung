@@ -18,6 +18,11 @@ public:
 	~App(void);
 	Engine* GetEngine(void);
 	SceneMngr* GetSceneMngr(void)	const;
+
+	void OnAppBegin(void);
+	void OnAppLost(void);
+	void OnAppRestore(void);
+	void OnAppEnd(void);
 private:
 	SceneMngr* m_scene_mngr_ptr;
 	Engine* m_engine_ptr;

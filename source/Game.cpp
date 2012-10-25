@@ -9,18 +9,19 @@
 
 #include "Engine.h"
 #include <iostream>
-#include "PathTool.h"
-#include "LogTool.h"
+#include "Path.h"
+#include "Log.h"
 #include <assert.h>
 #include "MemberController.h"
 #include "UI.h"
 #include "Cell.h"
 #include "Material.h"
-#include "PathTool.h"
 #include "App.h"
 
+/*
 void game(void)
 {
+
 	NEW App();
 	GetApp();
 
@@ -64,3 +65,4 @@ void game(void)
 
 	Log( "game over!" );
 }
+*/

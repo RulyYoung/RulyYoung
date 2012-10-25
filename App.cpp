@@ -10,6 +10,11 @@
 #include "Base.h"
 #include "Engine.h"
 #include "SceneMngr.h"
+#include "LuaLoader.h"
+#include "Path.h"
+#include "Log.h"
+#include "ViewController.h"
+#include "Cell.h"
 
 static App* g_app = NULL;
 App::App(void)
@@ -33,4 +38,55 @@ App* GetApp(void)
 {
 	return g_app;
 }
+void App::OnAppBegin(void)
+{
 
+	LuaLoader<int> loader;
+
+	std::string filename;
+	loader.LoadFile( Path( "Test.app/Test.lua" ).GetResFilename() );
+
+	
+	Log( "game start!\n" );
+
+	{
+		ViewController* fc = GetRoot()->GetViewController();
+		fc->SetColor( 0xff336699 );
+		fc->SetX( 320 / 2 );
+		fc->SetY( 480 / 2 );
+	}
+	////////////////////////////////////////////////////////
+	Cell* obj = new Cell();
+	{
+		ViewController* fc = obj->GetViewController();
+		fc->SetW( 320 );
+		fc->SetH( 320 );
+		fc->SetX( 0 );
+		fc->SetY( 0 );
+		fc->SetAngle( 0 );
+		fc->SetColor( 0xffffffff );
+		fc->SetImage( "pic01.jpg" );
+		GetRoot()->GetMemberController()->AddChild( obj );
+	}
+	////////////////////////////////////////////////////////
+	LISTENER_BEGIN( obj, EVENT_FRAMEMOVE )
+		obj->GetViewController()->SetX
+			( obj->GetViewController()->GetX() + 1 );
+	LISTENER_END()
+
+	LISTENER_BEGIN( obj, EVENT_FRAMEMOVE )
+		obj->GetViewController()->SetAngle
+			( obj->GetViewController()->GetAngle() - 1 );
+	LISTENER_END()
+
+	Log( "game over!" );
+}
+void App::OnAppLost(void)
+{
+}
+void App::OnAppRestore(void)
+{
+}
+void App::OnAppEnd(void)
+{
+}

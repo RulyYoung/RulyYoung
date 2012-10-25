@@ -11,13 +11,11 @@
 
 class Object
 {
-private:
-	virtual ~Object(void);
-protected:
+public:
 	Object(void);
-public
-	virtual unsigned int AddRef(void);
-	virtual unsigned int Release(void);
+	~Object(void);
+	unsigned int AddRef(void);
+	unsigned int Release(void);
 private:
 	unsigned int m_ref_counter;
 };
