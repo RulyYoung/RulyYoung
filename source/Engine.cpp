@@ -12,30 +12,20 @@
 #include "TextureInterface.h"
 #include "UI.h"
 #include "Cell.h"
-#include "Touch.h"
-#include "TouchUI.h"
 #include "Render.h"
 #include "App.h"
 
 Engine::Engine(void)
 	:	m_clock( 0 )
-	,	m_ui_ptr( NEW UI() )
-	,	m_touch_ptr( NEW TouchUI() )
 	,	m_render_ptr( NEW Render() )
 {
+	m_ui_ptr = NEW UI();
 	GetRender()->setting.cBGC = Color( 0xff336699 );
-	OnInit();
-}
-void Engine::OnInit(void)
-{
-	GetUI()->OnInit();
 }
 Engine::~Engine(void)
 {
 	SAFE_DELETE( m_render_ptr );
-	SAFE_DELETE( m_touch_ptr );
 	SAFE_DELETE( m_ui_ptr );
-	GetUI()->OnFini();
 }
 Render* Engine::GetRender(void)	const
 {
@@ -66,15 +56,10 @@ UI* Engine::GetUI(void)	const
 {
 	return m_ui_ptr;
 }
-TouchUI* Engine::GetTouch(void)	const
-{
-	return m_touch_ptr;
-}
 Engine* GetEngine(void)
 {
 	return GetApp()->GetEngine();
 }
-
 
 
 

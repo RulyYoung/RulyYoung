@@ -11,89 +11,53 @@
 #include "Engine.h"
 #include <vector>
 #include "MemberController.h"
+#include "TouchPoint.h"
 
 UI::UI(void)
-	:	m_root( 0 )
-{}
+	:	m_root( NULL )
+{
+	m_root = new Cell();
+	auto ctrl = m_root->GetViewController();
+	ctrl->SetColor( 0xffffffff );
+	ctrl->SetW( 320 );
+	ctrl->SetH( 480 );
+	ctrl->SetX( m_root->GetViewController()->GetW() / 2 );
+	ctrl->SetY( m_root->GetViewController()->GetH() / 2 );
+}
+UI::~UI(void)
+{
+	SAFE_RELEASE( m_root );
+}
 
 bool UI::ProcTouchDown(float x, float y)
 {
-	SetMousePos(Vec2(x,y));
+	SetMousePos( Vec2( x, y ) );
 	std::vector<Cell*>& vtrOut = m_vtrDrag;
 	vtrOut.clear();
-	Mat4 m;
-	m.SetIdentity();
 	const bool bResult = m_root->PickList( vtrOut, Vec2( x, y ) );
 	if( !vtrOut.empty() )
 	{
 		Cell* const p = *vtrOut.begin();
-		p->OnTouchDown();
-	}
-
-	return bResult;
-}
-
-bool UI::ProcTouchUP(float x, float y)
-{
-	SetMousePos(Vec2( x, y ));
-	std::vector<Cell*> vtrOut;
-	Mat4 m;
-	m.SetIdentity();
-	const bool bResult = m_root->PickList( vtrOut, Vec2( x, y ) );
-	if( !vtrOut.empty() )
-	{
-		Cell* const p = *vtrOut.begin();
-		p->OnTouchUp();
 		p->OnTouchClick();
 	}
+
 	return bResult;
 }
-
-void UI::OnInit(void)
-{
-	SAFE_RELEASE( m_root );
-	m_root = new Cell();
-	m_root->GetViewController()->SetColor( 0xffffffff );
-	m_root->GetViewController()->SetW( 320 );
-	m_root->GetViewController()->SetH( 480 );
-	m_root->GetViewController()->SetX( m_root->GetViewController()->GetW() / 2 );
-	m_root->GetViewController()->SetY( m_root->GetViewController()->GetH() / 2 );
-}
-
-void UI::OnFini(void)
-{
-	SAFE_RELEASE( m_root );
-}
-
 void UI::OnDraw(void)
 {
 	m_root->Draw();
 }
-
 void UI::OnTend(void)
 {
-	//	每帧都通过SmartPtr持有对象引用
-	//	然后在帧结束时集中释放
-
-	std::vector<SmartPtr<Cell*> >
-		recover_pool;
-
-	struct FrameMoveRecover
+	//	通过SmartPtr持有对象
+	//	使可能的释放操作集中在OnFrameMove全部结束时产生
+	std::vector<SmartPtr<Cell*>> pool;
+	const auto FuncAdd = [&](Cell* ptr)
 	{
-		FrameMoveRecover(std::vector<SmartPtr<Cell*> >& in_cache)
-			:	cache( in_cache )
-		{}
-		void operator()(Cell* p)
-		{
-			cache.push_back( SmartPtr<Cell*>( p ) );
-			p->OnFrameMove();
-		}
-		std::vector<SmartPtr<Cell*> >& cache;
+		pool.push_back( SmartPtr<Cell*>( ptr ) );
+		ptr->OnFrameMove();
 	};
-
-	m_root->GetMemberController()->
-		ForEachTree<FrameMoveRecover>
-		( FrameMoveRecover( recover_pool ), true );
+	m_root->GetMemberController()->ForEachTree( FuncAdd, true );
 }
 
 Cell* UI::GetRoot(void)	const
@@ -111,3 +75,11 @@ const Vec2& UI::SetMousePos(const Vec2& in)
 }
 
 
+void UI::OnTouch(const std::vector<TouchPoint>& touch_table)
+{
+	auto Func = [this](const TouchPoint& point)
+	{
+		this->ProcTouchDown( point.GetX(), point.GetY() );
+	};
+	std::for_each( touch_table.begin(), touch_table.end(), Func );
+}

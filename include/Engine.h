@@ -10,10 +10,10 @@
 #ifndef __ENGINE_H__
 #define __ENGINE_H__
 #include "output.h"
+#include <vector>
 
 class UI;
 class Cell;
-class TouchUI;
 class Render;
 class Engine
 {
@@ -24,13 +24,10 @@ public:
 	void OnDraw(void);
 	double GetCurrentTime(void)	const;
 	Render* GetRender(void)	const;
-	TouchUI* GetTouch(void)	const;
 	UI* GetUI(void)	const;
 private:
-	void OnInit(void);
 	Render* m_render_ptr;
-	TouchUI* m_touch_ptr;
-	UI*		m_ui_ptr;
+	UI* m_ui_ptr;
 	double m_clock;
 };
 

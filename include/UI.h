@@ -12,25 +12,21 @@
 #include "Face.h"
 #include "Cell.h"
 
+class TouchPoint;
 class UI
 {
-	friend class Cell;
-
 public:
 
 	UI(void);
+	~UI(void);
 	
-	void OnInit(void);
-	void OnFini(void);
 	void OnDraw(void);
 	void OnTend(void);
 	bool ProcTouchDown(float x, float y);
-	bool ProcTouchUP(float x, float y);
-
 	Cell* GetRoot(void)	const;
 	const Vec2& GetMousePos(void)	const;
 	const Vec2& SetMousePos(const Vec2& in);
-
+	void OnTouch(const std::vector<TouchPoint>& touch_table);
 public:
 
 	Vec2				mouse_pos;

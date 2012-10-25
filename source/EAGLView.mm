@@ -12,11 +12,11 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import "EAGLView.h"
 #import "Engine.h"
-#import "TouchInstance.h"
+#import "UI.h"
 #import "DataUtil.h"
 #import "Output.h"
-#import "TouchUI.h"
 #include "Render.h"
+#import "TouchPointTable.h"
 
 #define USE_DEPTH_BUFFER 0
 
@@ -74,9 +74,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//NSArray *firstTouchArr = [touches allObjects];
-	
-	TouchInstance instance( touches, self );
-	GetEngine()->GetTouch()->OnTouchBegin( &instance );
+	GetEngine()->GetUI()->OnTouch( TouchPointTable( touches, self ) );
 	
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -87,8 +85,8 @@
 	//{
 	
 	//}
-	TouchInstance instance( touches, self );
-	GetEngine()->GetTouch()->OnTouchEnd( &instance );
+//	TouchInstance instance( touches, self );
+//	GetEngine()->GetTouch()->OnTouchEnd( &instance );
 	
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -99,8 +97,8 @@
 	//{
 	
 	//}
-	TouchInstance instance( touches, self );
-	GetEngine()->GetTouch()->OnTouchMove( &instance );
+///	TouchInstance instance( touches, self );
+//	GetEngine()->GetTouch()->OnTouchMove( &instance );
 
 }
 

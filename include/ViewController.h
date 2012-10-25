@@ -13,11 +13,9 @@
 class Cell;
 class ViewController
 {
-	friend class Cell;
-private:
+public:
 	ViewController(void);
 	~ViewController(void);
-public:
  	float SetX(float);
 	float GetX(void)	const;
 	float SetY(float);

@@ -53,7 +53,6 @@
 		B367974415CC336D005347A3 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B367972815CC336D005347A3 /* EAGLView.mm */; };
 		B367974515CC336D005347A3 /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367972915CC336D005347A3 /* Engine.cpp */; };
 		B367974615CC336D005347A3 /* Face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367972A15CC336D005347A3 /* Face.cpp */; };
-		B367974715CC336D005347A3 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367972B15CC336D005347A3 /* Game.cpp */; };
 		B367974815CC336D005347A3 /* IListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367972C15CC336D005347A3 /* IListener.cpp */; };
 		B367974915CC336D005347A3 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367972D15CC336D005347A3 /* Image.cpp */; };
 		B367974A15CC336D005347A3 /* IUnknown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367972E15CC336D005347A3 /* IUnknown.cpp */; };
@@ -67,13 +66,13 @@
 		B367975415CC336D005347A3 /* Texture2D.mm in Sources */ = {isa = PBXBuildFile; fileRef = B367973815CC336D005347A3 /* Texture2D.mm */; };
 		B367975515CC336D005347A3 /* TextureInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = B367973915CC336D005347A3 /* TextureInterface.mm */; };
 		B367975615CC336D005347A3 /* TimeTool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367973A15CC336D005347A3 /* TimeTool.cpp */; };
-		B367975715CC336D005347A3 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367973B15CC336D005347A3 /* Touch.cpp */; };
-		B367975815CC336D005347A3 /* TouchInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = B367973C15CC336D005347A3 /* TouchInterface.mm */; };
-		B367975915CC336D005347A3 /* TouchUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367973D15CC336D005347A3 /* TouchUI.cpp */; };
+		B367975715CC336D005347A3 /* TouchPointTable.mm in Sources */ = {isa = PBXBuildFile; fileRef = B367973B15CC336D005347A3 /* TouchPointTable.mm */; };
+		B367975815CC336D005347A3 /* TouchInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367973C15CC336D005347A3 /* TouchInterface.cpp */; };
 		B367975A15CC336D005347A3 /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367973E15CC336D005347A3 /* UI.cpp */; };
 		B367975B15CC336D005347A3 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367973F15CC336D005347A3 /* Vec2.cpp */; };
 		B367975C15CC336D005347A3 /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B367974015CC336D005347A3 /* Vec4.cpp */; };
 		B367975E15CC3462005347A3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B367975D15CC3462005347A3 /* MainWindow.xib */; };
+		B36D627A1639C7A800E57656 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B36D62791639C7A800E57656 /* Default-568h@2x.png */; };
 		B389E0FE161DA66F001589DE /* LuaFileChunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B389E0FC161DA66F001589DE /* LuaFileChunk.cpp */; };
 		B3C566E7160B3AEE006A17FB /* LuaDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3C566E5160B3AEE006A17FB /* LuaDef.cpp */; };
 		B3C8AABE160F8CC800E3948D /* pic01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3C8AABC160F8CC800E3948D /* pic01.jpg */; };
@@ -198,9 +197,7 @@
 		B367971915CC335B005347A3 /* TextureInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureInterface.h; path = include/TextureInterface.h; sourceTree = "<group>"; };
 		B367971A15CC335B005347A3 /* TimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeTool.h; path = include/TimeTool.h; sourceTree = "<group>"; };
 		B367971B15CC335B005347A3 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Touch.h; path = include/Touch.h; sourceTree = "<group>"; };
-		B367971C15CC335B005347A3 /* TouchInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchInstance.h; path = include/TouchInstance.h; sourceTree = "<group>"; };
-		B367971D15CC335B005347A3 /* TouchInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchInterface.h; path = include/TouchInterface.h; sourceTree = "<group>"; };
-		B367971E15CC335B005347A3 /* TouchUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchUI.h; path = include/TouchUI.h; sourceTree = "<group>"; };
+		B367971D15CC335B005347A3 /* TouchPointTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchPointTable.h; path = include/TouchPointTable.h; sourceTree = "<group>"; };
 		B367971F15CC335B005347A3 /* UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UI.h; path = include/UI.h; sourceTree = "<group>"; };
 		B367972015CC335B005347A3 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vec2.h; path = include/Vec2.h; sourceTree = "<group>"; };
 		B367972115CC335B005347A3 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vec3.h; path = include/Vec3.h; sourceTree = "<group>"; };
@@ -210,7 +207,6 @@
 		B367972815CC336D005347A3 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EAGLView.mm; path = source/EAGLView.mm; sourceTree = "<group>"; };
 		B367972915CC336D005347A3 /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = source/Engine.cpp; sourceTree = "<group>"; };
 		B367972A15CC336D005347A3 /* Face.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Face.cpp; path = source/Face.cpp; sourceTree = "<group>"; };
-		B367972B15CC336D005347A3 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = source/Game.cpp; sourceTree = "<group>"; };
 		B367972C15CC336D005347A3 /* IListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IListener.cpp; path = source/IListener.cpp; sourceTree = "<group>"; };
 		B367972D15CC336D005347A3 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Image.cpp; path = source/Image.cpp; sourceTree = "<group>"; };
 		B367972E15CC336D005347A3 /* IUnknown.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IUnknown.cpp; path = source/IUnknown.cpp; sourceTree = "<group>"; };
@@ -224,14 +220,15 @@
 		B367973815CC336D005347A3 /* Texture2D.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Texture2D.mm; path = source/Texture2D.mm; sourceTree = "<group>"; };
 		B367973915CC336D005347A3 /* TextureInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TextureInterface.mm; path = source/TextureInterface.mm; sourceTree = "<group>"; };
 		B367973A15CC336D005347A3 /* TimeTool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeTool.cpp; path = source/TimeTool.cpp; sourceTree = "<group>"; };
-		B367973B15CC336D005347A3 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Touch.cpp; path = source/Touch.cpp; sourceTree = "<group>"; };
-		B367973C15CC336D005347A3 /* TouchInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TouchInterface.mm; path = source/TouchInterface.mm; sourceTree = "<group>"; };
-		B367973D15CC336D005347A3 /* TouchUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TouchUI.cpp; path = source/TouchUI.cpp; sourceTree = "<group>"; };
+		B367973B15CC336D005347A3 /* TouchPointTable.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TouchPointTable.mm; path = source/TouchPointTable.mm; sourceTree = "<group>"; };
+		B367973C15CC336D005347A3 /* TouchInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TouchInterface.cpp; path = source/TouchInterface.cpp; sourceTree = "<group>"; };
 		B367973E15CC336D005347A3 /* UI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UI.cpp; path = source/UI.cpp; sourceTree = "<group>"; };
 		B367973F15CC336D005347A3 /* Vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vec2.cpp; path = source/Vec2.cpp; sourceTree = "<group>"; };
 		B367974015CC336D005347A3 /* Vec4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vec4.cpp; path = source/Vec4.cpp; sourceTree = "<group>"; };
 		B367975D15CC3462005347A3 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		B367975F15CC355E005347A3 /* orb.inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = orb.inl.h; path = include/orb.inl.h; sourceTree = "<group>"; };
+		B36D62791639C7A800E57656 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B36D627B1639DF5000E57656 /* TouchPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchPoint.h; sourceTree = "<group>"; };
 		B389E0FC161DA66F001589DE /* LuaFileChunk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaFileChunk.cpp; path = source/LuaFileChunk.cpp; sourceTree = "<group>"; };
 		B389E0FF161DA6B2001589DE /* LuaFileChunk.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = LuaFileChunk.h; path = include/LuaFileChunk.h; sourceTree = "<group>"; };
 		B39101451139073F001AB067 /* Test.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.pch; sourceTree = "<group>"; };
@@ -276,7 +273,6 @@
 			children = (
 				B328EBC5161E4A02001D88AB /* App */,
 				B36796FA15CC32D6005347A3 /* Engine */,
-				B3C8AAC0160F8D8300E3948D /* Main */,
 				B3C8AAB8160F82EB00E3948D /* Res */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				B338BF461619C34800E66C36 /* Test.app */,
@@ -307,12 +303,18 @@
 				B3BA22B81628954B0025B34F /* Object.cpp */,
 				B341D72B1632F7DB00C6998B /* App.cpp */,
 				B341D72C1632F7DB00C6998B /* App.h */,
+				B367973E15CC336D005347A3 /* UI.cpp */,
+				B367971F15CC335B005347A3 /* UI.h */,
 				B341D731163365C000C6998B /* Scene.cpp */,
 				B341D732163365C000C6998B /* Scene.h */,
 				B341D7341633666E00C6998B /* SceneMngr.cpp */,
 				B341D7351633666E00C6998B /* SceneMngr.h */,
 				B316E8E216383AB5009E9207 /* SceneObj.cpp */,
 				B316E8E316383AB5009E9207 /* SceneObj.h */,
+				B367973B15CC336D005347A3 /* TouchPointTable.mm */,
+				B367971B15CC335B005347A3 /* Touch.h */,
+				B367971D15CC335B005347A3 /* TouchPointTable.h */,
+				B36D627B1639DF5000E57656 /* TouchPoint.h */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -435,11 +437,6 @@
 				B367971315CC335B005347A3 /* Render.h */,
 				B367971415CC335B005347A3 /* RenderInterface.h */,
 				B367971515CC335B005347A3 /* SDefine.h */,
-				B367971B15CC335B005347A3 /* Touch.h */,
-				B367971C15CC335B005347A3 /* TouchInstance.h */,
-				B367971D15CC335B005347A3 /* TouchInterface.h */,
-				B367971E15CC335B005347A3 /* TouchUI.h */,
-				B367971F15CC335B005347A3 /* UI.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -456,10 +453,7 @@
 				B367973415CC336D005347A3 /* output.mm */,
 				B367973615CC336D005347A3 /* Render.cpp */,
 				B367973715CC336D005347A3 /* RenderInterface.mm */,
-				B367973B15CC336D005347A3 /* Touch.cpp */,
-				B367973C15CC336D005347A3 /* TouchInterface.mm */,
-				B367973D15CC336D005347A3 /* TouchUI.cpp */,
-				B367973E15CC336D005347A3 /* UI.cpp */,
+				B367973C15CC336D005347A3 /* TouchInterface.cpp */,
 			);
 			name = source;
 			sourceTree = "<group>";
@@ -467,19 +461,12 @@
 		B3C8AAB8160F82EB00E3948D /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				B36D62791639C7A800E57656 /* Default-568h@2x.png */,
 				B3C8AAC1160F9D0B00E3948D /* Test.lua */,
 				B3C8AABC160F8CC800E3948D /* pic01.jpg */,
 				B3C8AABD160F8CC800E3948D /* pic00.png */,
 			);
 			name = Res;
-			sourceTree = "<group>";
-		};
-		B3C8AAC0160F8D8300E3948D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				B367972B15CC336D005347A3 /* Game.cpp */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 		B3CB2C1415F54242005E50AB /* Cell */ = {
@@ -610,6 +597,7 @@
 				B3C8AABE160F8CC800E3948D /* pic01.jpg in Resources */,
 				B3C8AABF160F8CC800E3948D /* pic00.png in Resources */,
 				B3C8AAC2160F9D0B00E3948D /* Test.lua in Resources */,
+				B36D627A1639C7A800E57656 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,7 +660,6 @@
 				B367974415CC336D005347A3 /* EAGLView.mm in Sources */,
 				B367974515CC336D005347A3 /* Engine.cpp in Sources */,
 				B367974615CC336D005347A3 /* Face.cpp in Sources */,
-				B367974715CC336D005347A3 /* Game.cpp in Sources */,
 				B367974815CC336D005347A3 /* IListener.cpp in Sources */,
 				B367974915CC336D005347A3 /* Image.cpp in Sources */,
 				B367974A15CC336D005347A3 /* IUnknown.cpp in Sources */,
@@ -686,9 +673,8 @@
 				B367975415CC336D005347A3 /* Texture2D.mm in Sources */,
 				B367975515CC336D005347A3 /* TextureInterface.mm in Sources */,
 				B367975615CC336D005347A3 /* TimeTool.cpp in Sources */,
-				B367975715CC336D005347A3 /* Touch.cpp in Sources */,
-				B367975815CC336D005347A3 /* TouchInterface.mm in Sources */,
-				B367975915CC336D005347A3 /* TouchUI.cpp in Sources */,
+				B367975715CC336D005347A3 /* TouchPointTable.mm in Sources */,
+				B367975815CC336D005347A3 /* TouchInterface.cpp in Sources */,
 				B367975A15CC336D005347A3 /* UI.cpp in Sources */,
 				B367975B15CC336D005347A3 /* Vec2.cpp in Sources */,
 				B367975C15CC336D005347A3 /* Vec4.cpp in Sources */,
@@ -724,6 +710,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Test.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Test;
 				PROVISIONING_PROFILE = "F129A969-3BA2-446A-91B4-F8DC838F6C2C";
@@ -746,6 +733,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Test.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Test;
 				PROVISIONING_PROFILE = "F129A969-3BA2-446A-91B4-F8DC838F6C2C";

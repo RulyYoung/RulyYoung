@@ -9,20 +9,16 @@
 
 #ifndef __TOUCHINTERFACE_H__
 #define __TOUCHINTERFACE_H__
-#include "DataUtil.h"
+#import <UIKit/UIKit.h>
+#include "TouchPoint.h"
+#include <vector>
 
-class ITouch
+
+class TouchPointTable
+:	public std::vector<TouchPoint>
 {
-protected:
-
-	ITouch(void)	{}
-
 public:
-	virtual int GetCount(void) const = 0;
-	virtual bool GetPos(float& x, float& y, int index)	const = 0;
+	TouchPointTable(NSSet* touchs, UIView* view);
 };
-
-int GetTouchCount(void);
-bool GetTouchPos(int* x, int* y,int index);
 
 #endif	//	__TOUCHINTERFACE_H__
