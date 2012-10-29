@@ -9,66 +9,24 @@
 
 #include "Render.h"
 #include "RenderInterface.h"
-
 #include "Engine.h"
 
+RenderSetting::RenderSetting(void)
+	:	cBGC( 0xff336699 )
+{}
+////////////////////////////////////////////////////////////
+
 Render::Render(void)
-:	m_pFaceStart( 0 )
-,	m_pFaceEnd( 0 )
+	:	m_setting( NEW RenderSetting() )
 {}
 
 Render::~Render(void)
-{}
-
-void Render::_PushFace(const Face& src)
 {
-	FaceRN* const pNew = this->_AllocRN();
-	(Face&)*pNew = src;
+	SAFE_DELETE( m_setting );
 }
-
-bool Render::_PopFace(void)
+const RenderSetting* Render::GetSetting(void)	const
 {
-	if( m_pFaceStart )
-	{
-		this->OnDrawFace( *m_pFaceStart );
-		this->_PopRN();
-		return true;
-	}
-	return false;
-}
-
-void Render::OnDrawFace(const Face& face)
-{
-	::DrawFace( face );
-}
-
-FaceRN* Render::_AllocRN(void)
-{
-	FaceRN* const pNew = new FaceRN();
-	if( m_pFaceEnd )
-	{
-		m_pFaceEnd->pNext = pNew;
-	}
-	else
-	{
-		m_pFaceStart = pNew;
-	}
-	m_pFaceEnd = pNew;
-	return pNew;
-}
-
-void Render::_PopRN(void)
-{
-	if( m_pFaceStart )
-	{
-		if( 0 == m_pFaceStart->pNext )
-		{
-			m_pFaceEnd = 0;
-		}
-		FaceRN* const pDelete = m_pFaceStart;
-		m_pFaceStart = m_pFaceStart->pNext;
-		delete pDelete;
-	}
+	return m_setting;
 }
 
 

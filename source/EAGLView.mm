@@ -143,7 +143,7 @@
     //glRotatef(3.0f, 0.0f, 0.0f, 1.0f);
 	//	glScalef( 
     
-	const Color& c = GetEngine()->GetRender()->setting.cBGC;
+	const Color& c = GetEngine()->GetRender()->GetSetting()->cBGC;
     glClearColor
 	(
 		c.GetRed(),

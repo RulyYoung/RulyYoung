@@ -17,8 +17,6 @@
 using namespace orb;
 
 
-
-
 struct RectF
 {
 public:

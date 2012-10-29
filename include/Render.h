@@ -11,45 +11,23 @@
 #include "Face.h"
 #include "Color.h"
 
-struct FaceRN
-	: public Face
-{
-public:
-	FaceRN(void)
-		:	pNext( 0 )
-	{}
-	FaceRN* pNext;
-};
-
+/////////////////////////////////////////////////////////////
 struct RenderSetting
 {
 public:
+	RenderSetting(void);
 	Color cBGC;
 };
-
+/////////////////////////////////////////////////////////////
 class Render
 {
 	friend struct Face;
 public:
 	Render(void);
 	~Render(void);
-	
-	void OnRestore(void);
-	void OnLost(void);
-	void OnDrawFace(const Face&);
-
-	RenderSetting setting;
-
+	const RenderSetting* GetSetting(void)	const;
 private:
-
-	void _PushFace(const Face&);
-	bool _PopFace(void);
-	FaceRN* _AllocRN(void);
-	void _PopRN(void);
-	
-private:
-	FaceRN* m_pFaceStart;
-	FaceRN* m_pFaceEnd;
+	RenderSetting* m_setting;
 };
 
 #endif	//	__RENDER_H__

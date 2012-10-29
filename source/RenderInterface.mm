@@ -33,8 +33,8 @@ private:
 void DrawFace(const Face& face)
 {
 	float sh,sw;
-	sw = face.w / 2;
-	sh = face.h / 2;
+	sw = face.GetW() / 2;
+	sh = face.GetH() / 2;
 
     const GLfloat squareVertices[] = {
 	/*
@@ -49,21 +49,21 @@ void DrawFace(const Face& face)
 		sw, sh,
     };
 	
-	UINT32 cc = TRANS_COLOR( face.c );
+	UINT32 cc = TRANS_COLOR( face.GetColor().ToValue() );
 	const UINT32 cb[ 4 ] =
 	{
 		cc,cc,cc,cc,
 	};
 
-	if( face.img.Valid() )
+	if( face.GetImage().Valid() )
 	{
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, face.img.GetHandle() );
+		glBindTexture(GL_TEXTURE_2D, face.GetImage().GetHandle() );
 		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); 
 		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
 		TextureInfo info;
-		face.img.GetInfo( &info );
-		const RectF uv( face.uv.l * info.fMaxS, face.uv.t * info.fMaxT, face.uv.r * info.fMaxS, face.uv.b * info.fMaxT );
+		face.GetImage().GetInfo( &info );
+		const RectF uv( face.GetUV().l * info.fMaxS, face.GetUV().t * info.fMaxT, face.GetUV().r * info.fMaxS, face.GetUV().b * info.fMaxT );
 		GLfloat	coordinates[] = 
 		{
 			uv.l,			uv.t,
@@ -95,8 +95,8 @@ void BeginFace(const Face& face)
 {
 	glPushMatrix();
 	glMatrixMode(GL_MODELVIEW);
-	glTranslatef( face.x, face.y, 0 );
-	glRotatef( face.angle, 0, 0, 1.0f );
+	glTranslatef( face.GetX(), face.GetY(), 0 );
+	glRotatef( face.GetAngle(), 0, 0, 1.0f );
 }
 
 void EndFace(void)

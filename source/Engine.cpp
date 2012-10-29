@@ -20,7 +20,6 @@ Engine::Engine(void)
 	,	m_render_ptr( NEW Render() )
 {
 	m_ui_ptr = NEW UI();
-	GetRender()->setting.cBGC = Color( 0xff336699 );
 }
 Engine::~Engine(void)
 {

@@ -307,6 +307,8 @@
 				B367971F15CC335B005347A3 /* UI.h */,
 				B341D731163365C000C6998B /* Scene.cpp */,
 				B341D732163365C000C6998B /* Scene.h */,
+				B367973615CC336D005347A3 /* Render.cpp */,
+				B367971315CC335B005347A3 /* Render.h */,
 				B341D7341633666E00C6998B /* SceneMngr.cpp */,
 				B341D7351633666E00C6998B /* SceneMngr.h */,
 				B316E8E216383AB5009E9207 /* SceneObj.cpp */,
@@ -434,7 +436,6 @@
 				B367970C15CC335B005347A3 /* OpenGL_Internal.h */,
 				B367970F15CC335B005347A3 /* output.h */,
 				B367971115CC335B005347A3 /* Plane.h */,
-				B367971315CC335B005347A3 /* Render.h */,
 				B367971415CC335B005347A3 /* RenderInterface.h */,
 				B367971515CC335B005347A3 /* SDefine.h */,
 			);
@@ -451,7 +452,6 @@
 				B367972E15CC336D005347A3 /* IUnknown.cpp */,
 				B367973215CC336D005347A3 /* OGL002AppDelegate.mm */,
 				B367973415CC336D005347A3 /* output.mm */,
-				B367973615CC336D005347A3 /* Render.cpp */,
 				B367973715CC336D005347A3 /* RenderInterface.mm */,
 				B367973C15CC336D005347A3 /* TouchInterface.cpp */,
 			);
@@ -569,7 +569,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "D10" */;
 			compatibilityVersion = "Xcode 3.2";

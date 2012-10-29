@@ -16,60 +16,55 @@ ViewController::~ViewController(void)
 {}
 float ViewController::SetW(float in_value)
 {
-	m_info.w = in_value;
-	return m_info.w;
+	return m_info.SetW( in_value );
 }
 float ViewController::GetW(void)const
 {
-	return m_info.w;
+	return m_info.GetW();
 }
 float ViewController::SetH(float in_value)
 {
-	m_info.h = in_value;
-	return m_info.h;
+	return m_info.SetH( in_value );
 }
 float ViewController::GetH(void)const
 {
-	return m_info.h;
+	return m_info.GetH();
 }
 unsigned int ViewController::SetColor(unsigned int in_color)
 {
-	m_info.c = in_color;
-	return m_info.c;
+	return m_info.SetColor( in_color ).ToValue();
 }
 unsigned int ViewController::GetColor(void)	const
 {
-	return m_info.c;
+	return m_info.GetColor().ToValue();
 }
 float ViewController::SetX(float in_value)
 {
-	m_info.x = in_value;
-	return m_info.x;
+	return m_info.SetX( in_value );
 }
 float ViewController::GetX(void)	const
 {
-	return m_info.x;}
+	return m_info.GetX();
+}
 float ViewController::SetY(float in_value)
 {
-	m_info.y = in_value;
-	return m_info.y;
+	return m_info.SetY( in_value );
 }
 float ViewController::GetY(void)	const
 {
-	return m_info.y;
+	return m_info.GetY();
 }
 float ViewController::GetAngle(void)	const
 {
-	return m_info.angle;
+	return m_info.GetAngle();
 }
 float ViewController::SetAngle(float in_angle)
 {
-	m_info.angle = in_angle;
-	return m_info.angle;
+	return m_info.SetAngle( in_angle );
 }
 void ViewController::SetImage(const std::string& image_name)
 {
-	m_info.img = Image2D( image_name.c_str() );
+	m_info.SetImage( Image2D( image_name.c_str() ) );
 }
 bool ViewController::HitTest(const Vec2& pos)	const
 {
